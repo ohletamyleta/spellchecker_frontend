@@ -9,16 +9,20 @@ import Login from "./components/Login";
 import SpellContainer from "./containers/SpellContainer";
 import SpellbookContainer from "./containers/SpellbookContainer";
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 
 
 class App extends React.Component {
+ 
   componentDidMount() {
     this.props.getAllSpells();
   }
 
   render() {
+
+    let loggedIn=this.props.spellReducer.currentUser.name
+    
     return (
       <div className="App">
         <NavBar />
