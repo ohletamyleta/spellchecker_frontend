@@ -11,7 +11,7 @@ export const getAllSpells = () => {
 
     return (
       fetch("https://api.open5e.com/spells/?limit=400", {
-        credentials: "include"
+        credentials: "include",
         method: "GET",
         headers: { "Content-Type": "application/json" }
       })
