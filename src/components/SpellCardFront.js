@@ -20,7 +20,9 @@ class SpellCardFront extends Component {
   }
 
   render() {
-    
+    return (
+      <h4>working on it...</h4>
+    )
   }
 
 }
