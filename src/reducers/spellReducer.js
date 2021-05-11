@@ -30,7 +30,22 @@ export default (state = initialState, action) => {
       return { ...state,
        userSpells: bookSpells} 
 
-    
+    case "ADDED_TO_BOOK":
+      let newArray = [...state.spells];
+      let userSpells = [...state.userSpells]
+
+      newArray.forEach( s => {
+        s.added="false"
+        userSpells.map(spell => {
+          if(s.id === spell.id) {
+            s.added="true";
+          }
+          return s
+        })
+      })
+
+      default:
+        return state
 
 
     }
