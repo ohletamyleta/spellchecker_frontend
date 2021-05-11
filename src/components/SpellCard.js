@@ -23,6 +23,6 @@ class SpellCard extends React.Component {
 }
 
 
-ReactDOM.render(<Card />, cardContainer);
+// ReactDOM.render(<Card />, cardContainer);
 
 export default SpellCard;

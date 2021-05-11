@@ -6,7 +6,24 @@ class SpellContainer extends Component {
   state = {
     spells: [],
     casterClass: "",
-  }
+  };
+
+  // makeSpellCards() {
+  //   let spellList = this.state.spells;
+
+  //   if (this.state.casterClass) {
+  //     spellList = this.state.spells.filter((spell) =>
+  //       spell.dnd_class
+  //         .toUpperCase()
+  //         .includes(this.state.casterClass.toUpperCase())
+  //     );
+  //   }
+
+  //   return spellList.map((spell) => (<SpellCardFront name={spell.name} level={spell.level} dnd_class={spell.dnd_class} desc={spell.desc} higher_level={spell.higher_level} 
+  //   range={spell.range} components={spell.components} duration={spell.duration} concentration={spell.concentration} casting_time={spell.casting_time} 
+  //   school={spell.school} archetype={spell.archetype} circles={spell.circles} />
+  //   ));
+  
 
   makeSpellCardsFront() {
     let spellList = this.state.spells;
@@ -67,10 +84,11 @@ class SpellContainer extends Component {
         <div>
           <button>Sort By Caster Class Placeholder</button>
         </div>
-          {this.makeSpellCardsFront()}
-          {/* {this.makeSpellCardsBack()} */}
+        {/* {this.makeSpellCards()} */}
+        {this.makeSpellCardsFront()}
+        {/* {this.makeSpellCardsBack()} */}
       </div>
-    )
+    );
   }
 }
 
