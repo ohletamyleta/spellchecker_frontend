@@ -66,17 +66,17 @@ class SpellContainer extends Component {
   //   ));
   // }
 
-  componentDidMount() {
-    fetch("https://api.open5e.com/spells/?limit=400")
-      .then((response) => response.json())
-      .then((data) => {
-        // console.log(data.results);
-        this.setState({
-          spells: data.results,
-        });
-        console.log(this.state);
-      });
-  }
+  // componentDidMount() {
+  //   fetch()
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       // console.log(data.results);
+  //       this.setState({
+  //         spells: data.results,
+  //       });
+  //       console.log(this.state);
+  //     });
+  // }
 
   render() {
     return (
