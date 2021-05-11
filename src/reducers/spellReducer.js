@@ -22,7 +22,7 @@ export default (state = initialState, action) => {
           currentUser: action.user,
       }  
 
-    case: "GET_USER_SPELLS_SUCCESS":
+    case "GET_USER_SPELLS_SUCCESS":
       let bookSpells = action.user.spells.map(s => {
         s.added = "true"
         return s
