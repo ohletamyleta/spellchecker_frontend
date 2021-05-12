@@ -8,7 +8,6 @@ const Login = ({ loginFormData,  updateLoginForm, login }) => {
     const handleInputChange = event => {
          const { name, value } = event.target
 
-         //create updatedLoginFormInfo object from loginForm state
          const updatedLoginFormInfo = {
             ...loginFormData,
             [name]: value
@@ -30,7 +29,7 @@ const Login = ({ loginFormData,  updateLoginForm, login }) => {
         <div>
            <form onSubmit={handleSubmit}>
             <div className="ui input">
-            <input placeholder="user name" value={loginFormData.username} name="username" type="text" onChange={handleInputChange}/>
+            <input placeholder="user name" value={loginFormData.name} name="name" type="text" onChange={handleInputChange}/>
             <input placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange}/><br/><br/>
             <button className="button button-login" type="submit" value="Log In" >  Log in </button>
              </div>
