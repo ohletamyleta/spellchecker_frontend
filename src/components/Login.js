@@ -1,24 +1,47 @@
-//I will render and process the login form
-//I am a stateful component, yay me! 
 import React from "react";
+import { connect } from "react-redux";
+import { updateLoginForm } from "../actions/loginForm";
+import { login } from "../actions/currentUser";
 
-class Login extends React.Component {
-  render() {
-    return (
-      <form>
-        <h1>Login</h1>
+const Login = ({ loginFormData,  updateLoginForm, login }) => {
+
+    const handleInputChange = event => {
+         const { name, value } = event.target
+
+         //create updatedLoginFormInfo object from loginForm state
+         const updatedLoginFormInfo = {
+            ...loginFormData,
+            [name]: value
+        }
+     
+        updateLoginForm(updatedLoginFormInfo)
+    }
+
+    const handleSubmit = event => {
+     
+        event.preventDefault()
+
+        login(loginFormData)
+
+
+    }
+
+ return (
         <div>
-          <input type="text" name="username" placeholder="Username" />
-          <label htmlFor="username">Username</label>
+           <form onSubmit={handleSubmit}>
+            <div className="ui input">
+            <input placeholder="user name" value={loginFormData.username} name="username" type="text" onChange={handleInputChange}/>
+            <input placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange}/><br/><br/>
+            <button className="button button-login" type="submit" value="Log In" >  Log in </button>
+             </div>
+        </form>
         </div>
-        <div>
-          <input type="password" name="password" placeholder="Password" />
-          <label htmlFor="password">Password</label>
-        </div>
-        <input type="submit" value="Login" />
-      </form>
-    );
-  }
+ )
 }
+const mapStateToProps = (state) => {
+  return {
+    loginFormData: state.loginForm,
+  };
+};
 
-export default Login; 
+export default connect(mapStateToProps, { updateLoginForm, login })(Login);

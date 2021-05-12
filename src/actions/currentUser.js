@@ -37,7 +37,7 @@ export const clearCurrentUser = () => {
 
 export const login = (credentials) => {
   return (dispatch) => {
-    return fetch("http://localhost:3000/api/v1/login", {
+    return fetch("http://localhost:3001/api/v1/login", {
       credentials: "include",
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -60,7 +60,7 @@ export const login = (credentials) => {
 export const logout = () => {
   return dispatch => {
     dispatch(clearCurrentUser());
-    return fetch("http://localhost:3000/api/v1/logout", {
+    return fetch("http://localhost:3001/api/v1/logout", {
       credentials: "include",
       method: "DELETE",
     })
@@ -74,7 +74,7 @@ export const logout = () => {
 
 export const getMySpells = (user) => {
   return (dispatch) => {
-    return fetch(`http://localhost:3000/api/v1/users/${user.id}`, {
+    return fetch(`http://localhost:3001/api/v1/users/${user.id}`, {
       credentials: "include",
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -100,7 +100,7 @@ export const signup = credentials => {
     };
     console.log("userInfo", userInfo);
 
-    return fetch("http://localhost:3000/api/v1/signup", {
+    return fetch("http://localhost:3001/api/v1/signup", {
       credentials: "include",
       method: "POST",
       headers: {

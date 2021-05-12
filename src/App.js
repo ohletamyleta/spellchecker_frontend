@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 
 import { connect } from "react-redux";
+import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Signup from "./components/Signup";
@@ -29,12 +30,10 @@ class App extends React.Component {
       <div>
         <Router>
           <div className="App">
-            <NavBar />
-            <h1> Spell Checker</h1>
-            <h2>
-              <em>A spellbook builder for Dungeons and Dragons 5th Edition</em>
-            </h2>
+         
+          <Header />
 
+            {/* <NavBar />
             {loggedIn ? (
               <Logout />
             ) : (
@@ -42,10 +41,12 @@ class App extends React.Component {
                 {" "}
                 <Login /> <Signup />{" "}
               </div>
-            )}
+            )} */}
 
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path="/spells" component={SpellContainer} />
+
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/login" component={Login} />
             </Switch>
